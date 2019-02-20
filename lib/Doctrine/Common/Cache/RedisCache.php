@@ -97,7 +97,7 @@ class RedisCache extends CacheProvider
         if ($lifeTime > 0) {
             return $this->redis->setex($id, $lifeTime, $data);
         }
-        $ttl = 3600*24;
+        $ttl = 3600*6;
         return $this->redis->set($id, $data,$ttl);
     }
 
